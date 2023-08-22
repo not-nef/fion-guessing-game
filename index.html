@@ -2,7 +2,33 @@
     <head>
         <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:wght@700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Fion Tippfehler Guessing Game</title>
     </head>
     
+    <body>
+        <script type="text/javascript" src="schwer.json" id="schwerenachrichten"></script>
+        <script type="text/javascript" src="main.js"></script>
+        
+        <div class="main">
+            <h1>Fion Tippfehler Guessing Game</h1>
+            
+            <div id="content">
+                <p id="text1">Du bekommst eine Nachricht von Fiona und deine Aufgabe ist es herauszufinden was sie schreiben wollte.</p>  
+                <p id="text2">Wichtig: Es wird nicht auf groß/kleinschreibung geachtet und kommas müssen weggelassen werden.</p>  
+            </div>
+        </div>
+
+        <fieldset id="difficultyselection">
+            <legend>Waehle eine Schwierigkeit</legend>
+            <input type="radio" name="difficulty" value="Einfach">Einfach<br>
+            <input type="radio" name="difficulty" value="Schwer" checked>Schwer<br>
+            <input type="radio" name="difficulty" value="Unmöglich">Unmöglich<br>
+            <br>
+            <button type="button" onclick="Start()">Start</button>
+        </fieldset>
+        
+        
+    </body>
+
 </html>

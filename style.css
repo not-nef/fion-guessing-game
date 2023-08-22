@@ -1,0 +1,13 @@
+body {
+    color: white;
+    background-color: #222222;
+    font-family: "Audiowide", sans-serif;
+    margin: auto;
+    text-align: center;
+    padding: 50 100;
+}
+
+html {
+    margin:    0 auto;
+    max-width: 1400px;
+}
