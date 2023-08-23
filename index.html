@@ -7,7 +7,9 @@
     </head>
     
     <body>
+        <script type="text/javascript" src="einfach.json" id="einfachenachrichten"></script>
         <script type="text/javascript" src="schwer.json" id="schwerenachrichten"></script>
+        <script type="text/javascript" src="extrem.json" id="extremenachrichten"></script>
         <script type="text/javascript" src="main.js"></script>
         
         <div class="main">
@@ -15,7 +17,10 @@
             
             <div id="content">
                 <p id="text1">Du bekommst eine Nachricht von Fiona und deine Aufgabe ist es herauszufinden was sie schreiben wollte.</p>  
-                <p id="text2">Wichtig: Es wird nicht auf groß/kleinschreibung geachtet und kommas müssen weggelassen werden.</p>  
+                <p id="text2">Wichtig: Es wird nicht auf groß/kleinschreibung geachtet und kommas müssen weggelassen werden.</p> 
+                <input type="text" placeholder="Die korrekte Nachricht hier" id="guessField" hidden> 
+                <br><br>
+                <button type="button" id="confirmbtn" onclick="confirmAnswer()" hidden>Überprüfen</button>
             </div>
         </div>
 
