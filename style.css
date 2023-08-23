@@ -20,6 +20,7 @@ input[type="radio"] {
 input {
     font-size: 45px;
     width: max-content;
+    height: 100px;
 }
 
 h1 {
