@@ -2,11 +2,7 @@ var enachrichten = JSON.parse(JSON.stringify(einfachenachrichten));
 var snachrichten = JSON.parse(JSON.stringify(schwerenachrichten));
 var exnachrichten = JSON.parse(JSON.stringify(extremenachrichten));
 
-document.addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-      confirmAnswer();
-    } 
-});
+let nachricht = [];
 
 function Start()
 {
@@ -49,7 +45,7 @@ function StartGame(diff)
     nachricht = selectNachricht(diff);
 
     document.getElementById("difficultyselection").remove();
-    document.getElementById("text2").remove();
+    document.getElementById("text2").innerHTML = "";
     document.getElementById("text1").innerHTML = nachricht.nachricht;
 
     let guessField = document.getElementById("guessField");
@@ -58,8 +54,37 @@ function StartGame(diff)
 
     document.getElementById("confirmbtn").removeAttribute("hidden")
 
+    document.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+          confirmAnswer();
+        } 
+    });
+
+}
+
+function format(str) {
+    return str.replace(/[.,\/#!$%\^'\*;:{}=\-_`~()]/g,"").replace("&","und").toUpperCase().replace(/\s/g,'')
 }
 
 function confirmAnswer() {
+    let guessField = document.getElementById("guessField");
+    let answer = guessField.value;
 
+    if (format(answer) == format(nachricht.loesung))
+    {
+        showAnswer(true);
+    }
+    else
+    {
+        showAnswer(false);
+    }
+}
+
+function showAnswer(success) {
+    if (success) {
+        document.getElementById("text2").innerHTML = "Richtig!";
+    }
+    else {
+        document.getElementById("text2").innerHTML = "Falsch";
+    }
 }
