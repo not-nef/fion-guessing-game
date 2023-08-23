@@ -17,6 +17,11 @@ input[type="radio"] {
     width: 35px;
 }
 
+input {
+    font-size: 45px;
+    width: max-content;
+}
+
 h1 {
     font-size: 100px;
 }
