@@ -12,14 +12,24 @@ html {
     max-width: 1400px;
 }
 
-h1 {
-    font-size: 5.9vw;
+input[type="radio"] {
+    height: 35px;
+    width: 35px;
 }
 
-h2 {
-    font-size: 3.0vh;
+h1 {
+    font-size: 100px;
 }
 
 p {
-    font-size: 2vmin;
+    font-size: 45px;
+}
+
+label {
+    font-size: 45px;
+}
+
+button {
+    font-size: 40px;
+    width: 300px;
 }
