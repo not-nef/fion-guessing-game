@@ -20,7 +20,12 @@
                 <p id="text2">Wichtig: Es wird nicht auf groß/kleinschreibung geachtet und kommas müssen weggelassen werden.</p> 
                 <input type="text" placeholder="Die korrekte Nachricht hier eingeben" id="guessField" hidden> 
                 <br><br>
-                <button type="button" id="confirmbtn" onclick="confirmAnswer()" hidden>Überprüfen</button>
+                <span>
+                    <button type="button" id="giveup" onclick="giveup()" hidden>Aufgeben</button>
+                    <button type="button" id="confirmbtn" onclick="confirmAnswer()" hidden>Überprüfen</button>
+                </span>
+                <button type="button" id="again" onclick="StartGame()" hidden>Nochmal</button>
+                
             </div>
         </div>
 

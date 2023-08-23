@@ -3,6 +3,7 @@ var snachrichten = JSON.parse(JSON.stringify(schwerenachrichten));
 var exnachrichten = JSON.parse(JSON.stringify(extremenachrichten));
 
 let nachricht = [];
+let diff = "";
 
 function Start()
 {
@@ -11,8 +12,8 @@ function Start()
     {
         if(radioButtons[i].checked == true)
         {
-            var difficulty = radioButtons[i].value;
-            StartGame(difficulty);
+            diff = radioButtons[i].value;
+            StartGame();
         }
     }
 }
@@ -21,7 +22,7 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
-function selectNachricht(diff)
+function selectNachricht()
 {
     let nachrichten = [];
 
@@ -40,19 +41,22 @@ function selectNachricht(diff)
     return nachrichten[getRandomInt(nachrichten.length)]
 }
 
-function StartGame(diff)
+function StartGame()
 {
-    nachricht = selectNachricht(diff);
+    nachricht = selectNachricht();
 
-    document.getElementById("difficultyselection").remove();
+    document.getElementById("difficultyselection").hidden = true;
+    document.getElementById("again").hidden = true;
     document.getElementById("text2").innerHTML = "";
     document.getElementById("text1").innerHTML = nachricht.nachricht;
 
     let guessField = document.getElementById("guessField");
     guessField.removeAttribute("hidden");
+    guessField.value = "";
     guessField.focus();
 
     document.getElementById("confirmbtn").removeAttribute("hidden")
+    document.getElementById("giveup").removeAttribute("hidden")
 
     document.addEventListener("keypress", function(event) {
         if (event.key === "Enter") {
@@ -83,8 +87,20 @@ function confirmAnswer() {
 function showAnswer(success) {
     if (success) {
         document.getElementById("text2").innerHTML = "Richtig!";
+        guessField.hidden = true;
+        document.getElementById("giveup").hidden = true;
+        document.getElementById("confirmbtn").hidden = true;
+        document.getElementById("again").hidden = false;
     }
     else {
         document.getElementById("text2").innerHTML = "Falsch";
     }
+}
+
+function giveup() {
+    guessField.hidden = true;
+    document.getElementById("text2").innerHTML = "Lösung: " + nachricht.loesung;
+    document.getElementById("giveup").hidden = true;
+    document.getElementById("confirmbtn").hidden = true;
+    document.getElementById("again").hidden = false;
 }
