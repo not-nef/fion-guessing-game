@@ -15,4 +15,8 @@ schwerenachrichten = [
         "nachricht":"Aurait bei Fenja",
         "loesung":"Zitat von Fenja",
     },
+    {
+        "nachricht":"Et hat sel s’y brêlassent",
+        "loesung":"Er hat selber verlassen",
+    },
 ]
